@@ -1,0 +1,14 @@
+.NavBar {
+    height: 50px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background-color: beige;
+    padding: 0 20px;
+}
+.NavBar__links {
+    margin: auto;
+}
+a {
+    margin: 30px;
+}
