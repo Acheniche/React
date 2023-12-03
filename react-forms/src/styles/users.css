@@ -1,0 +1,6 @@
+.UserForm {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    margin: 10px;
+}
