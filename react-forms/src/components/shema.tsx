@@ -35,27 +35,19 @@ export const schema = yup.object().shape({
     .transform((originalValue, originalObject) =>
       originalObject === null ? undefined : originalValue,
     )
-    .test({
-      name: "fileFormat",
-      message: "Unsupported file format",
-      test: (value) => {
-        if (value && value instanceof FileList) {
-          const supportedFormats = ["image/png", "image/jpeg", "image/jpg"];
-          return supportedFormats.includes(value[0]?.type);
-        }
-        return true;
-      },
+    .test("fileFormat", "Unsupported file format", (value) => {
+      if (value && value instanceof FileList) {
+        const supportedFormats = ["image/png", "image/jpeg", "image/jpg"];
+        return supportedFormats.includes(value[0]?.type);
+      }
+      return true;
     })
-    .test({
-      name: "fileSize",
-      message: "File size is too large",
-      test: (value) => {
-        if (value && value instanceof FileList) {
-          const maxSize = 2 * 1024 * 1024;
-          return value[0]?.size <= maxSize;
-        }
-        return true;
-      },
+    .test("fileSize", "File size is too large", (value) => {
+      if (value && value instanceof FileList) {
+        const maxSize = 2 * 1024 * 1024;
+        return value[0]?.size <= maxSize;
+      }
+      return true;
     }),
   Country: yup.string().min(1).required("Country is required"),
 });
