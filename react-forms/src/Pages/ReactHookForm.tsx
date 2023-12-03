@@ -1,4 +1,4 @@
-import Form from "../components/UI/Form";
+import Form from "../components/UI/RHForm";
 
 function ReactHookForm() {
   return (

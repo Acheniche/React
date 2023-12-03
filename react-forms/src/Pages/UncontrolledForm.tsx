@@ -1,5 +1,11 @@
+import Form from "../components/UI/UncontrolledForm";
+
 function UncontrolledForm() {
-  return <div>Uncontrolled page</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
 
 export default UncontrolledForm;
